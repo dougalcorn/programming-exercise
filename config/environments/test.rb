@@ -28,5 +28,5 @@ config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 config.gem 'thoughtbot-shoulda', :lib => 'shoulda/rails', :source => 'http://gems.github.com'
 config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com'
-config.gem 'flexmock'
+config.gem 'flexmock', :lib => 'flexmock/test_unit'
 config.gem 'brynary-webrat', :lib => 'webrat', :source => 'http://gems.github.com'
