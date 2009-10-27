@@ -1,5 +1,6 @@
 class Setting < ActiveRecord::Base
   validates_presence_of :name
+  validates_uniqueness_of :name
   validate :type_values
 
   def self.[](name)

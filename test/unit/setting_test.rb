@@ -2,7 +2,10 @@ require 'test_helper'
 
 class SettingTest < ActiveSupport::TestCase
 
+  setup :create_setting
+
   should_validate_presence_of :name
+  should_validate_uniqueness_of :name
 
   context "with a string setting" do
     setup do
@@ -31,5 +34,11 @@ class SettingTest < ActiveSupport::TestCase
         end
       end
     end
+  end
+
+  private
+
+  def create_setting
+    Setting.create!(:name => "Foo #{Time.now.to_i}")
   end
 end
