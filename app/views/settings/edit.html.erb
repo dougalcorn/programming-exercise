@@ -1,4 +1,4 @@
-<h1>Create a New Global Setting</h1>
+<h1><%=h @setting.name %></h1>
 
 <% form_for @setting.becomes(Setting) do |form| -%>
   <%= render :partial => "form", :object => form %>

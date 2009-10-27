@@ -1,0 +1,5 @@
+  <%= error_messages_for :setting -%>
+  <p><%= form.label :name %><%= form.text_field :name %></p>
+  <p><%= form.label :type %><%= form.select :type, options_for_select(@type_options, @setting.class.to_s) %></p>
+  <p><%= form.label :value %><%= form.text_field :value %></p>
+  <%= form.submit "Save" %>

@@ -8,7 +8,8 @@ class SettingsController < ApplicationController
   private
 
   def build_object
-    klass = params[:setting][:type].constantize rescue Setting
+    type = params[:setting].delete(:type) rescue "Setting"
+    klass = type.constantize rescue Setting
     @object ||= klass.new(params[:setting])
   end
 
@@ -17,5 +18,6 @@ class SettingsController < ApplicationController
     ["Integer", "Float", "Boolean"].each do |name|
       @type_options << [name, "#{name}Setting"]
     end
+    @type_options
   end
 end

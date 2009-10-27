@@ -1,3 +1,7 @@
 <h1>Global Settings</h1>
 
 <%= link_to "New Setting", new_setting_path %>
+
+<ul>
+  <%= render :partial => 'setting', :collection => @settings %>
+</ul>
