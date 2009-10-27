@@ -25,5 +25,17 @@ class BooleanSettingTest < ActiveSupport::TestCase
       assert_equal true, @setting.value
     end
 
+    context "using [] accessor" do
+      setup do
+        @setting.update_attributes(:value => false)
+        @found_setting = Setting["boolean setting"]
+      end
+      should "be a boolean setting" do
+        assert_kind_of BooleanSetting, @found_setting
+      end
+      should "have the right value" do
+        assert_equal false, @found_setting.value
+      end
+    end
   end
 end
