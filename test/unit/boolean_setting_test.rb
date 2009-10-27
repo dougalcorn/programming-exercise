@@ -8,6 +8,11 @@ class BooleanSettingTest < ActiveSupport::TestCase
     should_change "Setting.count", :by => 1
     should_change "BooleanSetting.count", :by => 1
 
+    should "save the value as false when setting as false" do
+      @setting.update_attributes(:value => false)
+      assert_equal false, @setting.reload.value
+    end
+
     ["0", "00", 0, nil, "", "false"].each do |value|
       should "be false with #{value.inspect} value" do
         @setting.update_attributes(:value => value)
@@ -19,5 +24,6 @@ class BooleanSettingTest < ActiveSupport::TestCase
       @setting.update_attributes(:value => "some random stuff")
       assert_equal true, @setting.value
     end
+
   end
 end
