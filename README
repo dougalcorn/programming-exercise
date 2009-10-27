@@ -12,3 +12,5 @@ migration.
 
 Bonus: add caching within the model so that values are cached in
 regular Rails cache to minimize db load.
+
+This project took me a little less than 4 hours to complete.
