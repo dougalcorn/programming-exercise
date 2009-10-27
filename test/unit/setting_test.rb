@@ -6,7 +6,7 @@ class SettingTest < ActiveSupport::TestCase
 
   context "with a string setting" do
     setup do
-      @setting = Factory(:setting, :name => "Global Setting", :type => "String")
+      @setting = Factory(:setting, :name => "Global Setting")
     end
     should_change "Setting.count", :by => 1
   end
