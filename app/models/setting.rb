@@ -3,7 +3,8 @@ class Setting < ActiveRecord::Base
   validate :type_values
 
   def self.[](name)
-    find_by_name(name)
+    @@settings ||= { }
+    @@settings[name] ||= find_by_name(name)
   end
 
   private

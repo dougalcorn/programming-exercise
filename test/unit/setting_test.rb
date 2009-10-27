@@ -18,6 +18,18 @@ class SettingTest < ActiveSupport::TestCase
       should "have the right value" do
         assert_equal "value", @found_setting.value
       end
+
+      context "cache hits on the [] accessor" do
+        setup do
+          @found_setting = Setting["Global Setting"]
+        end
+        before_should "not call the underlying finder" do
+          flexmock(Setting).should_receive(:find_by_name).never
+        end
+        should "still find the setting" do
+          assert_equal @setting, @found_setting
+        end
+      end
     end
   end
 end
