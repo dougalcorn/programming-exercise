@@ -1,0 +1,6 @@
+<h1>Create a New Global Setting</h1>
+
+<% form_for @setting do |form| -%>
+  <p><%= form.label :name %><%= form.text_field :name %></p>
+  <%= form.submit "Save" %>
+<% end -%>
