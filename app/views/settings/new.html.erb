@@ -2,5 +2,6 @@
 
 <% form_for @setting do |form| -%>
   <p><%= form.label :name %><%= form.text_field :name %></p>
+  <p><%= form.label :type %><%= form.select :type, @type_options %></p>
   <%= form.submit "Save" %>
 <% end -%>
