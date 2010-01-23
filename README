@@ -1,5 +1,5 @@
-This is a mostly empty rails project I'm creating for iDeeli as a
-programming exercise during the interview process.
+This is a mostly empty rails project I'm creating for a potential 
+client as a programming exercise during the interview process.
 
 Write a model (ActiveRecord-based) for storing global configuration
 settings. It will be used for storing single values, for example an
